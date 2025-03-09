@@ -36,3 +36,69 @@ out/
 /SignalR/.vs/SignalR/v17/DocumentLayout.backup.json
 /SignalR/.vs/SignalR/v17/DocumentLayout.json
 *.vsidx
+
+
+
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.suo
+
+# Ignore Visual Studio working files
+.vs/
+.vscode/
+*.vscode/
+*.cache
+*.log
+
+# Ignore project-specific debug and runtime files
+*.pdb
+*.exe
+*.dll
+*.db
+*.testhost.*
+*.deps.json
+*.runtimeconfig.json
+
+# Ignore NuGet packages
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+*.nuget.cache
+*.nuget.g.props
+*.nuget.g.targets
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.swp
+*.idb
+*.pidb
+*.tlog
+
+# Ignore generated files
+Generated/           # If you have a folder for auto-generated files
+*.generated.*
+
+# Ignore design-time build artifacts
+*.dtbcache.v2
+
+# Ignore ReSharper files
+_ReSharper.Caches/
+
+# Ignore JetBrains Rider files
+.idea/
+
+# Ignore TestResults folders
+TestResults/
+
+# Ignore specific paths (e.g., your LeetCode subfolder outputs)
+02-LeetCode/**/*.vsidx
+02-LeetCode/**/bin/
+02-LeetCode/**/obj/
+
+# Ignore any files that match these patterns anywhere in the repo
+*.vsidx
