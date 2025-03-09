@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+
+    <h2>Home</h2>
+
+    <input id="message" type="text" />
+    <button id="send" type="button" value="send" onclick="send()">Send</button>
+
+    <ul id="messagesBox">
+    </ul>
+
+    <script src="~/Scripts/jquery-1.6.4.min.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.4.3.min.js"></script>
+
+    @* the default proxy of js *@
+    <script src="~/signalr/hubs"></script>
+
+    @* when using generated Proxy it can be used for all hubs ,
+        so u need to specify the wanted hub to work on
+
+        NOTE : Generated proxy is only available for js clients and it will be downloaded with the package ,
+        but other clients like (Angular , React) u must create your own proxy
+    *@
+
+    <script>
+        $(function () {
+            debugger;
+            var name = prompt("Enter Your Name :");
+
+            // limit to my Hub
+            var proxy = $.connection.chatHub;
+
+            // start connection
+            $.connection.hub.start().done(function () {
+                console.log("SignalR connection established.");
+            }).fail(function (error) {
+                console.error("SignalR connection failed: ", error);
+            });
+
+            // Subscribe on the callback method from server side
+            proxy.client.broadcastMessage = function (name, message) {
+                $('#messagesBox').append(`<li>${name} : ${message} </li>`);
+            };
+
+            // Attach the click event handler using jQuery
+            $('#send').click(function () {
+                proxy.server.sendMessage(name, $('#message').val());
+            });
+
+            // Define the send function (globally because it's been called from html not jquery handler)
+            //window.send = function () {
+            //    proxy.server.sendMessage(name, $('#message').val());
+            //};
+        });
+    </script>
+
+</body>
+</html>
+

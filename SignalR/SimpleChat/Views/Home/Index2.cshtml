@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Index2";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+
+    <h2>Home</h2>
+
+    <input id="message" type="text" />
+    <button id="send" type="button" value="send" onclick="send()">Send</button>
+
+    <ul id="messagesBox">
+    </ul>
+
+    <script src="~/Scripts/jquery-1.6.4.min.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.4.3.min.js"></script>
+
+    @* when using Custom Proxy u will create your own proxy ,
+        which will work only on one hub that u specify when create*@
+     
+    @* using my custom proxy of js *@
+    <script>
+        $(function () {
+            debugger;
+            var name = prompt("Enter Your Name :");
+
+            //define connection
+            var connection = $.hubConnection();
+
+            // create custom proxy
+            var proxy = connection.createHubProxy('chatHub');
+
+            // start connection
+            connection.start();
+
+            proxy.on('broadcastMessage', function (name, message) {
+                $('#messagesBox').append(`<li>${name} : ${message} </li>`);
+            });
+
+            // Attach the click event handler using jQuery
+            $('#send').click(function () {
+                // Call the chat method on the server
+                proxy.invoke('sendMessage', name, $('#message').val());
+            });
+           
+        });
+    </script>
+
+</body>
+</html>
+
