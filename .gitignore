@@ -35,3 +35,4 @@ out/
 /SignalR/.vs/SignalR/v17/.suo
 /SignalR/.vs/SignalR/v17/DocumentLayout.backup.json
 /SignalR/.vs/SignalR/v17/DocumentLayout.json
+*.vsidx
