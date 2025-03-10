@@ -43,15 +43,16 @@
             // start connection
             connection.start();
 
-            proxy.on('broadcastMessage', function (name, message) {
-                $('#messagesBox').append(`<li>${name} : ${message} </li>`);
-            });
-
             // Attach the click event handler using jQuery
             $('#send').click(function () {
                 // Call the chat method on the server
                 proxy.invoke('sendMessage', name, $('#message').val());
             });
+
+            // Subscribe on the callback method from server side
+            proxy.on('broadcastMessage', function (name, message) {
+                $('#messagesBox').append(`<li>${name} : ${message} </li>`);
+            }); 
            
         });
     </script>
