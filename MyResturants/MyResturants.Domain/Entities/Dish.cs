@@ -9,6 +9,6 @@ public class Dish
 
     public int? KiloCalories { get; set; }
 
-    public Resturant Resturant { get; set; }
+    public Resturant Resturant { get; set; } = new();
     public int RestaurantId { get; set; }
 }

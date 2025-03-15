@@ -1,0 +1,16 @@
+E:\Software_Courses\Demos\MyResturants\MyResturants.Application\bin\Debug\net8.0\MyResturants.Application.deps.json
+E:\Software_Courses\Demos\MyResturants\MyResturants.Application\bin\Debug\net8.0\MyResturants.Application.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Application\bin\Debug\net8.0\MyResturants.Application.pdb
+E:\Software_Courses\Demos\MyResturants\MyResturants.Application\bin\Debug\net8.0\MyResturants.Domain.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Application\bin\Debug\net8.0\MyResturants.Domain.pdb
+E:\Software_Courses\Demos\MyResturants\MyResturants.Application\obj\Debug\net8.0\MyResturants.Application.csproj.AssemblyReference.cache
+E:\Software_Courses\Demos\MyResturants\MyResturants.Application\obj\Debug\net8.0\MyResturants.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\Software_Courses\Demos\MyResturants\MyResturants.Application\obj\Debug\net8.0\MyResturants.Application.AssemblyInfoInputs.cache
+E:\Software_Courses\Demos\MyResturants\MyResturants.Application\obj\Debug\net8.0\MyResturants.Application.AssemblyInfo.cs
+E:\Software_Courses\Demos\MyResturants\MyResturants.Application\obj\Debug\net8.0\MyResturants.Application.csproj.CoreCompileInputs.cache
+E:\Software_Courses\Demos\MyResturants\MyResturants.Application\obj\Debug\net8.0\MyResturants.Application.sourcelink.json
+E:\Software_Courses\Demos\MyResturants\MyResturants.Application\obj\Debug\net8.0\MyRestur.FCA0256E.Up2Date
+E:\Software_Courses\Demos\MyResturants\MyResturants.Application\obj\Debug\net8.0\MyResturants.Application.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Application\obj\Debug\net8.0\refint\MyResturants.Application.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Application\obj\Debug\net8.0\MyResturants.Application.pdb
+E:\Software_Courses\Demos\MyResturants\MyResturants.Application\obj\Debug\net8.0\ref\MyResturants.Application.dll

@@ -1,0 +1,22 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using MyResturants.Infrastructure.Presistance;
+using MyResturants.Infrastructure.Seeders;
+
+namespace MyResturants.Infrastructure.Extensions;
+
+public static class ServiceCollectionExtensions
+{
+    public static void AddInfrastructure(this IServiceCollection services , IConfiguration configuration)
+    {
+        var connectionString = configuration.GetConnectionString("ResturantsDb");
+
+        services.AddDbContext<ResturantsDbContext>(options =>
+        {
+            options.UseSqlServer(connectionString);
+        });
+
+        services.AddScoped<IResturantSeeder, ResturantSeeder>();
+    }
+}

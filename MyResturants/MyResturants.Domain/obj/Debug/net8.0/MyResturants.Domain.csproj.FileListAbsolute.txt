@@ -1,0 +1,12 @@
+E:\Software_Courses\Demos\MyResturants\MyResturants.Domain\bin\Debug\net8.0\MyResturants.Domain.deps.json
+E:\Software_Courses\Demos\MyResturants\MyResturants.Domain\bin\Debug\net8.0\MyResturants.Domain.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Domain\bin\Debug\net8.0\MyResturants.Domain.pdb
+E:\Software_Courses\Demos\MyResturants\MyResturants.Domain\obj\Debug\net8.0\MyResturants.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Software_Courses\Demos\MyResturants\MyResturants.Domain\obj\Debug\net8.0\MyResturants.Domain.AssemblyInfoInputs.cache
+E:\Software_Courses\Demos\MyResturants\MyResturants.Domain\obj\Debug\net8.0\MyResturants.Domain.AssemblyInfo.cs
+E:\Software_Courses\Demos\MyResturants\MyResturants.Domain\obj\Debug\net8.0\MyResturants.Domain.csproj.CoreCompileInputs.cache
+E:\Software_Courses\Demos\MyResturants\MyResturants.Domain\obj\Debug\net8.0\MyResturants.Domain.sourcelink.json
+E:\Software_Courses\Demos\MyResturants\MyResturants.Domain\obj\Debug\net8.0\MyResturants.Domain.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Domain\obj\Debug\net8.0\refint\MyResturants.Domain.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Domain\obj\Debug\net8.0\MyResturants.Domain.pdb
+E:\Software_Courses\Demos\MyResturants\MyResturants.Domain\obj\Debug\net8.0\ref\MyResturants.Domain.dll

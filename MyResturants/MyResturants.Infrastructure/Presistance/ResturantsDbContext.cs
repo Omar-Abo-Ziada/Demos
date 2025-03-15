@@ -3,24 +3,14 @@ using MyResturants.Domain.Entities;
 
 namespace MyResturants.Infrastructure.Presistance;
 
-public class ResturantsDbContext : DbContext
+internal class ResturantsDbContext(DbContextOptions<ResturantsDbContext> options) : DbContext(options)
 {
-    public DbSet<Resturant> Resturants { get; set; }
-    public DbSet<Dish> Dishes { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder
-        .UseSqlServer("Server=.;Database=MyResturantsDb;Trusted_Connection=True;Trust Server Certificate=True;MultipleActiveResultSets=True");
-    }
+    internal DbSet<Resturant> Resturants { get; set; }
+    internal DbSet<Dish> Dishes { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Resturant>().OwnsOne(r => r.Address, a =>
-        {
-            //a.Property(a => a.Street).IsRequired();
-        });
-
+        modelBuilder.Entity<Resturant>().OwnsOne(r => r.Address);
 
         modelBuilder.Entity<Resturant>()
             .HasMany(r => r.Dishes).WithOne(d => d.Resturant)
@@ -29,6 +19,5 @@ public class ResturantsDbContext : DbContext
         modelBuilder.Entity<Dish>()
            .Property(d => d.Price)
            .HasPrecision(18, 2);  
-
     }
 }
