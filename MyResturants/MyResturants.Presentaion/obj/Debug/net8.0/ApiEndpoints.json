@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "ContainingType": "MyResturants.Presentaion.Controllers.ResturantsController",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/Resturants",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

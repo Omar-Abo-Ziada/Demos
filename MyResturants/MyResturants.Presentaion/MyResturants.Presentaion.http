@@ -1,6 +1,5 @@
-@MyResturants.Presentaion_HostAddress = http://localhost:5119
+@MyResturants.Presentaion_HostAddress = https://localhost:7129
 
-GET {{MyResturants.Presentaion_HostAddress}}/weatherforecast/
-Accept: application/json
+GET {{MyResturants.Presentaion_HostAddress}}/api/resturants
 
 ###

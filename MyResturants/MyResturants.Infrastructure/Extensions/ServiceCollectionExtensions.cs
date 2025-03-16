@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MyResturants.Domain.Repositories;
 using MyResturants.Infrastructure.Presistance;
+using MyResturants.Infrastructure.Repositories;
 using MyResturants.Infrastructure.Seeders;
 
 namespace MyResturants.Infrastructure.Extensions;
@@ -18,5 +20,6 @@ public static class ServiceCollectionExtensions
         });
 
         services.AddScoped<IResturantSeeder, ResturantSeeder>();
+        services.AddScoped<IResturantRepository, ResturantRepositoy>();
     }
 }

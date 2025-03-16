@@ -4,6 +4,19 @@
     "title": "MyResturants.Presentaion",
     "version": "1.0"
   },
-  "paths": { },
+  "paths": {
+    "/api/Resturants": {
+      "get": {
+        "tags": [
+          "Resturants"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
   "components": { }
 }

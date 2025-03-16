@@ -145,3 +145,13 @@ E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\obj\Debug\net8.0
 E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\obj\Debug\net8.0\MyResturants.Presentaion.pdb
 E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\obj\Debug\net8.0\MyResturants.Presentaion.genruntimeconfig.cache
 E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\obj\Debug\net8.0\ref\MyResturants.Presentaion.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0\Serilog.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0\Serilog.AspNetCore.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0\Serilog.Sinks.File.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0\Serilog.Sinks.Seq.dll

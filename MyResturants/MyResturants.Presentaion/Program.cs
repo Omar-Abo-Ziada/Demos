@@ -1,4 +1,4 @@
-
+using MyResturants.Application.Extensions;
 using MyResturants.Infrastructure.Extensions;
 using MyResturants.Infrastructure.Seeders;
 
@@ -18,8 +18,8 @@ namespace MyResturants.Presentaion
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-
             builder.Services.AddInfrastructure(builder.Configuration);
+            builder.Services.AddApplication(builder.Configuration);
 
             var app = builder.Build();
 
