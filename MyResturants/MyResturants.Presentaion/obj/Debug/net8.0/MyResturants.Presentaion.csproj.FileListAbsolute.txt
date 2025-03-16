@@ -155,3 +155,7 @@ E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0
 E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
 E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0\Serilog.Sinks.File.dll
 E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0\Serilog.Sinks.Seq.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0\AutoMapper.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0\FluentValidation.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+E:\Software_Courses\Demos\MyResturants\MyResturants.Presentaion\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using FluentValidation;
+using FluentValidation.AspNetCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyResturants.Application.Resturants;
 using Serilog;
@@ -9,6 +11,8 @@ public static class ServiceCollectionExtensions
 {
     public static void AddApplication(this IServiceCollection services , IConfiguration configuration)
     {
+        var assembly = typeof(ServiceCollectionExtensions).Assembly;
+
         services.AddScoped<IResturantsService, ResturantsService>();
 
         Log.Logger = new LoggerConfiguration()
@@ -17,5 +21,10 @@ public static class ServiceCollectionExtensions
             .CreateLogger();
 
         services.AddSerilog();
+
+        services.AddAutoMapper(assembly);
+
+        services.AddValidatorsFromAssembly(assembly)
+            .AddFluentValidationAutoValidation();
     }
 }

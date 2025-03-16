@@ -3,3 +3,7 @@
 GET {{MyResturants.Presentaion_HostAddress}}/api/resturants
 
 ###
+
+GET {{MyResturants.Presentaion_HostAddress}}/api/resturants/5
+
+###

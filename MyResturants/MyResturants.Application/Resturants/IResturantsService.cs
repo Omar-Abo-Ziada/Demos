@@ -1,8 +1,10 @@
-﻿using MyResturants.Domain.Entities;
+﻿using MyResturants.Application.Resturants.Dtos;
 
 namespace MyResturants.Application.Resturants;
 
 public interface IResturantsService
 {
-    Task<IEnumerable<Resturant>> GetAllAsync();
+    Task<int> CreateAsync(CreateResturantDto createResturantDto);
+    Task<IEnumerable<ResturantDto>> GetAllAsync();
+    Task<ResturantDto?> GetByIdAsync(int id);
 }
