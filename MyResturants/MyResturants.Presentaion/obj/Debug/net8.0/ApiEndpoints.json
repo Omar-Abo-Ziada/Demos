@@ -75,7 +75,7 @@
     "ContainingType": "MyResturants.Presentaion.Controllers.ResturantsController",
     "Method": "Delete",
     "RelativePath": "api/Resturants/{id}",
-    "HttpMethod": "POST",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -88,6 +88,37 @@
     "ReturnTypes": [
       {
         "Type": "MyResturants.Domain.Entities.Resturant",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MyResturants.Presentaion.Controllers.ResturantsController",
+    "Method": "Update",
+    "RelativePath": "api/Resturants/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateResturantCommand",
+        "Type": "MyResturants.Application.Resturants.Commands.UpdateResturant.UpdateResturantCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
         "MediaTypes": [
           "text/plain",
           "application/json",

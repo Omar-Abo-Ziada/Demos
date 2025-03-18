@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MyResturants.Application.Resturants.Commands.CreateResturant;
 using MyResturants.Application.Resturants.Commands.DeleteResturant;
+using MyResturants.Application.Resturants.Commands.UpdateResturant;
 using MyResturants.Application.Resturants.Queries.GetAllResturants;
 using MyResturants.Application.Resturants.Queries.GetResturantById;
 using MyResturants.Domain.Entities;
@@ -10,7 +11,7 @@ namespace MyResturants.Presentaion.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class ResturantsController(/*IResturantsService resturantsService ,*/ IMediator mediator) 
+public class ResturantsController(/*IResturantsService resturantsService ,*/ IMediator mediator)
     : ControllerBase
 {
     [HttpGet]
@@ -48,6 +49,17 @@ public class ResturantsController(/*IResturantsService resturantsService ,*/ IMe
     {
         //int id = await resturantsService.CreateAsync(createResturantDto);
         int id = await mediator.Send(createResturantCommand);
-        return CreatedAtAction(nameof(GetById), new { id = id }, null);
+        return CreatedAtAction(nameof(GetById), new { id }, null);
+    }
+
+    [HttpPut("{id:int}")]
+    public async Task<ActionResult<int>> Update([FromRoute] int id, UpdateResturantCommand updateResturantCommand)
+    {
+        //int id = await resturantsService.CreateAsync(createResturantDto);
+        updateResturantCommand.Id = id;
+        bool isFound = await mediator.Send(updateResturantCommand);
+        if (!isFound) return NotFound();
+
+        return CreatedAtAction(nameof(GetById), new { updateResturantCommand.Id }, null);
     }
 }

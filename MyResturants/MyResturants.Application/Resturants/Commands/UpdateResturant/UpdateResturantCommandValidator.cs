@@ -1,8 +1,9 @@
 ﻿using FluentValidation;
+using MyResturants.Application.Resturants.Commands.UpdateResturant;
 
-namespace MyResturants.Application.Resturants.Commands.CreateResturant;
+namespace MyResturants.Application.Resturants.Commands.UpdateResturant;
 
-public class UpdateResturantCommandValidator : AbstractValidator<CreateResturantCommand>
+public class UpdateResturantCommandValidator : AbstractValidator<UpdateResturantCommand>
 {
     private readonly List<string> validCategories = ["Italian", "Indian", "American"];
 
