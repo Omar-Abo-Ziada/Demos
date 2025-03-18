@@ -14,6 +14,7 @@ public static class ServiceCollectionExtensions
         var assembly = typeof(ServiceCollectionExtensions).Assembly;
 
         services.AddScoped<IResturantsService, ResturantsService>();
+        services.AddMediatR(config => config.RegisterServicesFromAssembly(assembly));
 
         Log.Logger = new LoggerConfiguration()
             .ReadFrom.Configuration(configuration)

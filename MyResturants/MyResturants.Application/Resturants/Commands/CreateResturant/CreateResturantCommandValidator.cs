@@ -1,13 +1,12 @@
 ﻿using FluentValidation;
-using MyResturants.Application.Resturants.Dtos;
 
-namespace MyResturants.Application.Resturants.Validators;
+namespace MyResturants.Application.Resturants.Commands.CreateResturant;
 
-public class CreateResturantValidator : AbstractValidator<CreateResturantDto>
+public class CreateResturantCommandValidator : AbstractValidator<CreateResturantCommand>
 {
-    private readonly List<string> validCategories = ["Italian" , "Indian" , "American"] ;
+    private readonly List<string> validCategories = ["Italian", "Indian", "American"];
 
-    public CreateResturantValidator()
+    public CreateResturantCommandValidator()
     {
         // first way to validate with custom rule
         RuleFor(p => p.Category)

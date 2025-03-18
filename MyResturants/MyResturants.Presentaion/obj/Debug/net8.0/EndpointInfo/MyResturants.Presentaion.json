@@ -50,17 +50,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateResturantDto"
+                "$ref": "#/components/schemas/CreateResturantCommand"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateResturantDto"
+                "$ref": "#/components/schemas/CreateResturantCommand"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateResturantDto"
+                "$ref": "#/components/schemas/CreateResturantCommand"
               }
             }
           }
@@ -153,7 +153,7 @@
         },
         "additionalProperties": false
       },
-      "CreateResturantDto": {
+      "CreateResturantCommand": {
         "type": "object",
         "properties": {
           "name": {
