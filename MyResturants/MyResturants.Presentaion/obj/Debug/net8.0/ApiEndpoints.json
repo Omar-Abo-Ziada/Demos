@@ -70,5 +70,31 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "MyResturants.Presentaion.Controllers.ResturantsController",
+    "Method": "Delete",
+    "RelativePath": "api/Resturants/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MyResturants.Domain.Entities.Resturant",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using MyResturants.Application.Resturants;
 using MyResturants.Application.Resturants.Commands.CreateResturant;
+using MyResturants.Application.Resturants.Commands.DeleteResturant;
 using MyResturants.Application.Resturants.Queries.GetAllResturants;
 using MyResturants.Application.Resturants.Queries.GetResturantById;
 using MyResturants.Domain.Entities;
@@ -10,7 +10,7 @@ namespace MyResturants.Presentaion.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class ResturantsController(IResturantsService resturantsService , IMediator mediator) 
+public class ResturantsController(/*IResturantsService resturantsService ,*/ IMediator mediator) 
     : ControllerBase
 {
     [HttpGet]
@@ -30,6 +30,17 @@ public class ResturantsController(IResturantsService resturantsService , IMediat
         if (resturant is null) return NotFound();
 
         return Ok(resturant);
+    }
+
+    [HttpDelete("{id:int}")]
+    public async Task<ActionResult<Resturant>> Delete([FromRoute] int id)
+    {
+        //var resturant = await resturantsService.GetByIdAsync(id);
+        bool isDeleted = await mediator.Send(new DeleteResturantCommand(id));
+
+        if (!isDeleted) return NotFound();
+
+        return NoContent();
     }
 
     [HttpPost]
