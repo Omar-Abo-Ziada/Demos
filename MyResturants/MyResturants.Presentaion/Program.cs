@@ -1,6 +1,7 @@
 using MyResturants.Application.Extensions;
 using MyResturants.Infrastructure.Extensions;
 using MyResturants.Infrastructure.Seeders;
+using MyResturants.Presentaion.Middlewares;
 using Serilog;
 
 namespace MyResturants.Presentaion
@@ -16,6 +17,8 @@ namespace MyResturants.Presentaion
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddScoped<ErrorHandlingMiddleware>();
+
             builder.Services.AddInfrastructure(builder.Configuration);
             builder.Services.AddApplication(builder.Configuration);
 
@@ -25,11 +28,12 @@ namespace MyResturants.Presentaion
             var seeder = scope.ServiceProvider.GetRequiredService<IResturantSeeder>();
             await seeder.Seed();
 
+            app.UseMiddleware<ErrorHandlingMiddleware>();
+
             app.UseSerilogRequestLogging();
 
             app.UseHttpsRedirection();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
