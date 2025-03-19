@@ -25,16 +25,16 @@ namespace MyResturants.Presentaion
             var seeder = scope.ServiceProvider.GetRequiredService<IResturantSeeder>();
             await seeder.Seed();
 
+            app.UseSerilogRequestLogging();
+
+            app.UseHttpsRedirection();
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
-            app.UseSerilogRequestLogging();
-
-            app.UseHttpsRedirection();
 
             app.UseAuthorization();
 

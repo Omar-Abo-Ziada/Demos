@@ -87,13 +87,18 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MyResturants.Domain.Entities.Resturant",
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
         "MediaTypes": [
           "text/plain",
           "application/json",
           "text/json"
         ],
-        "StatusCode": 200
+        "StatusCode": 404
       }
     ]
   },
