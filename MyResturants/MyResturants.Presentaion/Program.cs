@@ -1,6 +1,7 @@
 using MyResturants.Application.Extensions;
 using MyResturants.Infrastructure.Extensions;
 using MyResturants.Infrastructure.Seeders;
+using Serilog;
 
 namespace MyResturants.Presentaion
 {
@@ -10,11 +11,8 @@ namespace MyResturants.Presentaion
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-
             builder.Services.AddControllers();
 
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
@@ -34,10 +32,11 @@ namespace MyResturants.Presentaion
                 app.UseSwaggerUI();
             }
 
+            app.UseSerilogRequestLogging();
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

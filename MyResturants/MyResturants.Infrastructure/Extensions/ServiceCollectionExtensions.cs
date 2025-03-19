@@ -17,6 +17,7 @@ public static class ServiceCollectionExtensions
         services.AddDbContext<ResturantsDbContext>(options =>
         {
             options.UseSqlServer(connectionString);
+            options.EnableSensitiveDataLogging();
         });
 
         services.AddScoped<IResturantSeeder, ResturantSeeder>();

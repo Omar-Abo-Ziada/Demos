@@ -12,9 +12,9 @@ public class CreateResturantCommandHandler(ILogger<CreateResturantCommandHandler
 {
     public async Task<int> Handle(CreateResturantCommand request, CancellationToken cancellationToken)
     {
-        logger.LogInformation("Creating New Resturant");
+        logger.LogInformation("Creating New Resturant {@resturant}" , request);
         var resturant = mapper.Map<Resturant>(request);
         int id = await resturantRepository.CreateAsync(resturant);
         return id;
     }
-}
+}   

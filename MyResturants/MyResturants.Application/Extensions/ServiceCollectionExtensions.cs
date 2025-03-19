@@ -4,6 +4,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyResturants.Application.Resturants;
 using Serilog;
+using Serilog.Configuration;
+using Serilog.Core;
+using Serilog.Events;
+using Serilog.Sinks.SystemConsole.Themes;
 
 namespace MyResturants.Application.Extensions;
 
@@ -19,6 +23,9 @@ public static class ServiceCollectionExtensions
         Log.Logger = new LoggerConfiguration()
             .ReadFrom.Configuration(configuration)
             .WriteTo.Seq("http://localhost:5341/")
+            .WriteTo.Console(outputTemplate:"[{Timestamp:dd-MM HH:mm:ss} {Level:u3}] | {SourceContext} | {NewLine} {Message:lj}{NewLine}{Exception}")
+            .MinimumLevel.Override("Microsoft" , Serilog.Events.LogEventLevel.Warning)
+            .MinimumLevel.Override("Microsoft.EntityFrameworkCore" , Serilog.Events.LogEventLevel.Information)
             .CreateLogger();
 
         services.AddSerilog();
