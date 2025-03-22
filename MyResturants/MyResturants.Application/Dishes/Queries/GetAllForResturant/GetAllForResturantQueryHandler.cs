@@ -2,7 +2,6 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 using MyResturants.Application.Dishes.Dtos;
-using MyResturants.Application.Resturants.Dtos;
 using MyResturants.Domain.Entities;
 using MyResturants.Domain.Exceptions;
 using MyResturants.Domain.Repositories;

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MyResturants.Application.Dishes.Commands.CreateDish;
 using MyResturants.Application.Dishes.Dtos;
 using MyResturants.Application.Dishes.Queries.GetAllForResturant;
+using MyResturants.Application.Dishes.Queries.GetDishByIdForResturant;
 
 namespace MyResturants.Presentaion.Controllers;
 
@@ -23,6 +24,13 @@ public class DishesController(IMediator mediator) : ControllerBase
     public async Task<ActionResult<IEnumerable<DishDto>>> GetAllForResturant([FromRoute] int resturantId)
     {
         var dishes = await mediator.Send(new GetAllForResturantQuery(resturantId));
+        return Ok(dishes);
+    }
+
+    [HttpGet("{dishId:int}")]
+    public async Task<ActionResult<IEnumerable<DishDto>>> GetByIdResturant([FromRoute] int resturantId , [FromRoute] int dishId)
+    {
+        var dishes = await mediator.Send(new GetDishByIdForResturantQuery(resturantId , dishId));
         return Ok(dishes);
     }
 }

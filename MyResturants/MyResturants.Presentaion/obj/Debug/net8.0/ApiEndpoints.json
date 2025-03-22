@@ -207,5 +207,36 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "MyResturants.Presentaion.Controllers.DishesController",
+    "Method": "GetByIdResturant",
+    "RelativePath": "api/resturants/{resturantId}/Dishes/{dishId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "resturantId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dishId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MyResturants.Application.Dishes.Dtos.DishDto, MyResturants.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]
