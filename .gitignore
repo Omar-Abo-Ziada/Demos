@@ -72,3 +72,7 @@ TestResults/
 
 # Ignore specific patterns related to LeetCode subfolder outputs (ignores extensions and patterns)
 *.vsidx
+/MyResturants/MyResturants.Application/obj/Debug/net8.0/MyResturants.Application.AssemblyInfo.cs
+/MyResturants/MyResturants.Domain/obj/Debug/net8.0/MyResturants.Domain.AssemblyInfo.cs
+/MyResturants/MyResturants.Infrastructure/obj/Debug/net8.0/MyResturants.Infrastructure.AssemblyInfo.cs
+/MyResturants/MyResturants.Presentaion/obj/Debug/net8.0/MyResturants.Presentaion.AssemblyInfo.cs
