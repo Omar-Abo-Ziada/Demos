@@ -1,4 +1,4 @@
-﻿using MyResturants.Application.Dishes;
+﻿using MyResturants.Application.Dishes.Dtos;
 
 namespace MyResturants.Application.Resturants.Dtos;
 

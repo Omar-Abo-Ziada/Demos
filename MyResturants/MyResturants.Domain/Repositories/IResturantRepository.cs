@@ -9,5 +9,4 @@ public interface IResturantRepository
     Task<IEnumerable<Resturant>> GetAllAsync();
     Task<Resturant?> GetByIdAsync(int id);
     Task Delete(Resturant resturant);
-    void Detach(Resturant entity);
 }

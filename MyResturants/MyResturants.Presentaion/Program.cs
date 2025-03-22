@@ -1,3 +1,4 @@
+using Microsoft.OpenApi.Models;
 using MyResturants.Application.Extensions;
 using MyResturants.Infrastructure.Extensions;
 using MyResturants.Infrastructure.Seeders;
@@ -15,7 +16,10 @@ namespace MyResturants.Presentaion
             builder.Services.AddControllers();
 
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My Resturants API", Version = "v1" });
+            });
 
             builder.Services.AddScoped<ErrorHandlingMiddleware>();
 
@@ -37,7 +41,7 @@ namespace MyResturants.Presentaion
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Resturants API v1"));
             }
 
             app.UseAuthorization();

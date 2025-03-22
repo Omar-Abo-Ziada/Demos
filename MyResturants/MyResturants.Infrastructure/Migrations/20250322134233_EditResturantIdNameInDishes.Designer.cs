@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyResturants.Infrastructure.Presistance;
 
@@ -11,9 +12,11 @@ using MyResturants.Infrastructure.Presistance;
 namespace MyResturants.Infrastructure.Migrations
 {
     [DbContext(typeof(ResturantsDbContext))]
-    partial class ResturantsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250322134233_EditResturantIdNameInDishes")]
+    partial class EditResturantIdNameInDishes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

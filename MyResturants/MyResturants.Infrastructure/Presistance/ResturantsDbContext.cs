@@ -13,8 +13,9 @@ internal class ResturantsDbContext(DbContextOptions<ResturantsDbContext> options
         modelBuilder.Entity<Resturant>().OwnsOne(r => r.Address);
 
         modelBuilder.Entity<Resturant>()
-            .HasMany(r => r.Dishes).WithOne(d => d.Resturant)
-            .HasForeignKey(d => d.RestaurantId);
+            .HasMany(r => r.Dishes)
+            .WithOne(d => d.Resturant)
+            .HasForeignKey(d => d.ResturantId);
 
         modelBuilder.Entity<Dish>()
            .Property(d => d.Price)

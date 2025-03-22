@@ -9,7 +9,7 @@ internal class ResturantRepositoy(ResturantsDbContext context) : IResturantRepos
 {
     public async Task<int> CreateAsync(Resturant resturant)
     {
-        await context.AddAsync(resturant);
+        context.Resturants.Add(resturant);
         await context.SaveChangesAsync();
         return resturant.Id;
     }
@@ -36,14 +36,5 @@ internal class ResturantRepositoy(ResturantsDbContext context) : IResturantRepos
         return await context.Resturants
             .Include(r => r.Dishes)
             .FirstOrDefaultAsync(r => r.Id == id);
-    }
-
-    public void Detach(Resturant entity)
-    {
-        var entry = context.Entry(entity);
-        if (entry.State != EntityState.Detached)
-        {
-            entry.State = EntityState.Detached;
-        }
     }
 }

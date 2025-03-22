@@ -1,4 +1,4 @@
-﻿namespace MyResturants.Application.Dishes;
+﻿namespace MyResturants.Application.Dishes.Dtos;
 
 public class DishDto
 {

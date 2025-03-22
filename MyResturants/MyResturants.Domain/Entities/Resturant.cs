@@ -13,7 +13,7 @@ public class Resturant
     public string? ContactNumber { get; set; }
 
     public Address Address { get; set; } = new(); // Owned entity, no separate table
-    public List<Dish> Dishes { get; set; } = new();
+    public List<Dish> Dishes { get; set; } = null!;
 
     //public User Owner { get; set; } = default!;
     //public string OwnerId { get; set; } = default!;
