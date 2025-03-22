@@ -210,7 +210,23 @@
   },
   {
     "ContainingType": "MyResturants.Presentaion.Controllers.DishesController",
-    "Method": "GetByIdResturant",
+    "Method": "DeleteAllForResturant",
+    "RelativePath": "api/resturants/{resturantId}/Dishes",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "resturantId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyResturants.Presentaion.Controllers.DishesController",
+    "Method": "GetByIdForResturant",
     "RelativePath": "api/resturants/{resturantId}/Dishes/{dishId}",
     "HttpMethod": "GET",
     "IsController": true,

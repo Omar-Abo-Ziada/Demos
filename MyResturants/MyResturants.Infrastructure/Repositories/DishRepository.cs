@@ -20,4 +20,13 @@ internal class DishRepository(ResturantsDbContext context) : IDishRepository
             .Where(d => d.ResturantId == resturantId)
             .ToListAsync();
     }
+
+    public async Task RemoveAllForResturantAsync(int resturantId)
+    {
+        var dishes = await context.Dishes
+            .Where(d => d.ResturantId == resturantId)
+            .ToListAsync();
+        context.Dishes.RemoveRange(dishes);
+        await context.SaveChangesAsync();
+    }
 }
