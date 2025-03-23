@@ -199,7 +199,7 @@
         }
       }
     },
-    "/register": {
+    "/api/identity/register": {
       "post": {
         "tags": [
           "MyResturants.Presentaion"
@@ -230,7 +230,7 @@
         }
       }
     },
-    "/login": {
+    "/api/identity/login": {
       "post": {
         "tags": [
           "MyResturants.Presentaion"
@@ -274,7 +274,7 @@
         }
       }
     },
-    "/refresh": {
+    "/api/identity/refresh": {
       "post": {
         "tags": [
           "MyResturants.Presentaion"
@@ -302,12 +302,12 @@
         }
       }
     },
-    "/confirmEmail": {
+    "/api/identity/confirmEmail": {
       "get": {
         "tags": [
           "MyResturants.Presentaion"
         ],
-        "operationId": "MapIdentityApi-/confirmEmail",
+        "operationId": "MapIdentityApi-api/identity/confirmEmail",
         "parameters": [
           {
             "name": "userId",
@@ -338,7 +338,7 @@
         }
       }
     },
-    "/resendConfirmationEmail": {
+    "/api/identity/resendConfirmationEmail": {
       "post": {
         "tags": [
           "MyResturants.Presentaion"
@@ -359,7 +359,7 @@
         }
       }
     },
-    "/forgotPassword": {
+    "/api/identity/forgotPassword": {
       "post": {
         "tags": [
           "MyResturants.Presentaion"
@@ -390,7 +390,7 @@
         }
       }
     },
-    "/resetPassword": {
+    "/api/identity/resetPassword": {
       "post": {
         "tags": [
           "MyResturants.Presentaion"
@@ -421,7 +421,7 @@
         }
       }
     },
-    "/manage/2fa": {
+    "/api/identity/manage/2fa": {
       "post": {
         "tags": [
           "MyResturants.Presentaion"
@@ -462,7 +462,7 @@
         }
       }
     },
-    "/manage/info": {
+    "/api/identity/manage/info": {
       "get": {
         "tags": [
           "MyResturants.Presentaion"
@@ -1324,6 +1324,17 @@
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "Bearer"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "bearerAuth": [ ]
+    }
+  ]
 }
