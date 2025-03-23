@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MyResturants.Domain.Entities;
 using MyResturants.Domain.Repositories;
 using MyResturants.Infrastructure.Presistance;
 using MyResturants.Infrastructure.Repositories;
@@ -10,7 +12,7 @@ namespace MyResturants.Infrastructure.Extensions;
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddInfrastructure(this IServiceCollection services , IConfiguration configuration)
+    public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString("ResturantsDb");
 
@@ -19,6 +21,9 @@ public static class ServiceCollectionExtensions
             options.UseSqlServer(connectionString);
             options.EnableSensitiveDataLogging();
         });
+
+        services.AddIdentityApiEndpoints<User>()
+            .AddEntityFrameworkStores<ResturantsDbContext>();
 
         services.AddScoped<IResturantSeeder, ResturantSeeder>();
 

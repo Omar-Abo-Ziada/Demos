@@ -1,5 +1,6 @@
 using Microsoft.OpenApi.Models;
 using MyResturants.Application.Extensions;
+using MyResturants.Domain.Entities;
 using MyResturants.Infrastructure.Extensions;
 using MyResturants.Infrastructure.Seeders;
 using MyResturants.Presentaion.Middlewares;
@@ -36,13 +37,15 @@ namespace MyResturants.Presentaion
 
             app.UseSerilogRequestLogging();
 
-            app.UseHttpsRedirection();
-
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Resturants API v1"));
             }
+
+            app.UseHttpsRedirection();
+
+            app.MapIdentityApi<User>();
 
             app.UseAuthorization();
 
