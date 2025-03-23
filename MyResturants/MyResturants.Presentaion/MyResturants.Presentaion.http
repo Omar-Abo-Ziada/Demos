@@ -18,7 +18,7 @@ content-type:application/json
 
 ###
 
-POST {{MyResturants.Presentaion_HostAddress}}/login
+POST {{MyResturants.Presentaion_HostAddress}}/api/identity/login
 content-type:application/json
 {
   "email" : "ahmed@gmail.com",

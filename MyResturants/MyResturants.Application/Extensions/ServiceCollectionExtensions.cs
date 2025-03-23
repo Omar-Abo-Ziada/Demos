@@ -3,17 +3,14 @@ using FluentValidation.AspNetCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyResturants.Application.Resturants;
+using MyResturants.Application.Users;
 using Serilog;
-using Serilog.Configuration;
-using Serilog.Core;
-using Serilog.Events;
-using Serilog.Sinks.SystemConsole.Themes;
 
 namespace MyResturants.Application.Extensions;
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddApplication(this IServiceCollection services , IConfiguration configuration)
+    public static void AddApplication(this IServiceCollection services, IConfiguration configuration)
     {
         var assembly = typeof(ServiceCollectionExtensions).Assembly;
 
@@ -21,7 +18,8 @@ public static class ServiceCollectionExtensions
         services.AddMediatR(config => config.RegisterServicesFromAssembly(assembly));
 
         Log.Logger = new LoggerConfiguration()
-            .ReadFrom.Configuration(configuration) // From json to make it editable through differnt envirnments
+            .ReadFrom.Configuration(configuration) 
+            // From json to make it editable through differnt envirnments
             // Manual Config
             //.WriteTo.Seq("http://localhost:5341/")
             //.WriteTo.Console(outputTemplate:"[{Timestamp:dd-MM HH:mm:ss} {Level:u3}] | {SourceContext} | {NewLine} {Message:lj}{NewLine}{Exception}")
@@ -35,5 +33,8 @@ public static class ServiceCollectionExtensions
 
         services.AddValidatorsFromAssembly(assembly)
             .AddFluentValidationAutoValidation();
+
+        services.AddScoped<IUserContext, UserContext>();
+        services.AddHttpContextAccessor();
     }
 }

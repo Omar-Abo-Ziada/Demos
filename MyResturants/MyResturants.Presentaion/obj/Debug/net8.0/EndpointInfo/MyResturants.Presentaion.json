@@ -202,7 +202,7 @@
     "/api/identity/register": {
       "post": {
         "tags": [
-          "MyResturants.Presentaion"
+          "Identity"
         ],
         "requestBody": {
           "content": {
@@ -233,7 +233,7 @@
     "/api/identity/login": {
       "post": {
         "tags": [
-          "MyResturants.Presentaion"
+          "Identity"
         ],
         "parameters": [
           {
@@ -277,7 +277,7 @@
     "/api/identity/refresh": {
       "post": {
         "tags": [
-          "MyResturants.Presentaion"
+          "Identity"
         ],
         "requestBody": {
           "content": {
@@ -305,7 +305,7 @@
     "/api/identity/confirmEmail": {
       "get": {
         "tags": [
-          "MyResturants.Presentaion"
+          "Identity"
         ],
         "operationId": "MapIdentityApi-api/identity/confirmEmail",
         "parameters": [
@@ -341,7 +341,7 @@
     "/api/identity/resendConfirmationEmail": {
       "post": {
         "tags": [
-          "MyResturants.Presentaion"
+          "Identity"
         ],
         "requestBody": {
           "content": {
@@ -362,7 +362,7 @@
     "/api/identity/forgotPassword": {
       "post": {
         "tags": [
-          "MyResturants.Presentaion"
+          "Identity"
         ],
         "requestBody": {
           "content": {
@@ -393,7 +393,7 @@
     "/api/identity/resetPassword": {
       "post": {
         "tags": [
-          "MyResturants.Presentaion"
+          "Identity"
         ],
         "requestBody": {
           "content": {
@@ -424,7 +424,7 @@
     "/api/identity/manage/2fa": {
       "post": {
         "tags": [
-          "MyResturants.Presentaion"
+          "Identity"
         ],
         "requestBody": {
           "content": {
@@ -465,7 +465,7 @@
     "/api/identity/manage/info": {
       "get": {
         "tags": [
-          "MyResturants.Presentaion"
+          "Identity"
         ],
         "responses": {
           "200": {
@@ -495,7 +495,7 @@
       },
       "post": {
         "tags": [
-          "MyResturants.Presentaion"
+          "Identity"
         ],
         "requestBody": {
           "content": {
@@ -529,6 +529,37 @@
           },
           "404": {
             "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/identity/user": {
+      "patch": {
+        "tags": [
+          "Identity"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserDetailsCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserDetailsCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserDetailsCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -1318,6 +1349,21 @@
             "nullable": true
           },
           "postalCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateUserDetailsCommand": {
+        "type": "object",
+        "properties": {
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "nationality": {
             "type": "string",
             "nullable": true
           }

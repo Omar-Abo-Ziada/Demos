@@ -3,6 +3,7 @@ using MyResturants.Application.Extensions;
 using MyResturants.Domain.Entities;
 using MyResturants.Infrastructure.Extensions;
 using MyResturants.Infrastructure.Seeders;
+using MyResturants.Presentaion.Extensions;
 using MyResturants.Presentaion.Middlewares;
 using Serilog;
 
@@ -14,35 +15,7 @@ namespace MyResturants.Presentaion
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddControllers();
-
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My Resturants API", Version = "v1" });
-
-                c.AddSecurityDefinition("bearerAuth", new OpenApiSecurityScheme
-                {
-                    Type = SecuritySchemeType.Http,
-                    Scheme = "Bearer"
-                });
-
-                c.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
-                    {
-                    new OpenApiSecurityScheme
-                    {
-                        Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "bearerAuth" }
-                    },
-                    []
-
-                    }
-                });
-            });
-
-
-            builder.Services.AddScoped<ErrorHandlingMiddleware>();
-
+            builder.AddPresentaion();
             builder.Services.AddInfrastructure(builder.Configuration);
             builder.Services.AddApplication(builder.Configuration);
 
@@ -64,7 +37,9 @@ namespace MyResturants.Presentaion
 
             app.UseHttpsRedirection();
 
-            app.MapGroup("api/identity").MapIdentityApi<User>();
+            app.MapGroup("api/identity")
+                .WithTags("Identity")
+                .MapIdentityApi<User>();
 
             app.UseAuthorization();
 
