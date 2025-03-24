@@ -348,6 +348,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MyResturants.Presentaion.Controllers.IdentityController",
+    "Method": "AssignUserRole",
+    "RelativePath": "api/identity/userRole",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "MyResturants.Application.Users.Commands.AssignUserRole.AssignUserRoleCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MyResturants.Presentaion.Controllers.ResturantsController",
     "Method": "GetAll",
     "RelativePath": "api/Resturants",
