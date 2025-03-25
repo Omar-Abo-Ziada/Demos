@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyResturants.Domain.Entities;
 using MyResturants.Domain.Repositories;
+using MyResturants.Infrastructure.Authorization;
 using MyResturants.Infrastructure.Presistance;
 using MyResturants.Infrastructure.Repositories;
 using MyResturants.Infrastructure.Seeders;
@@ -24,6 +25,7 @@ public static class ServiceCollectionExtensions
 
         services.AddIdentityApiEndpoints<User>()
             .AddRoles<IdentityRole>()
+            .AddClaimsPrincipalFactory<ResturantsUserClaimsPrincipalFactory>()
             .AddEntityFrameworkStores<ResturantsDbContext>();
 
         services.AddScoped<IResturantSeeder, ResturantSeeder>();
