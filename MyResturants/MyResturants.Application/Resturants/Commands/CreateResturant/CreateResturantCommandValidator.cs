@@ -2,11 +2,11 @@
 
 namespace MyResturants.Application.Resturants.Commands.CreateResturant;
 
-public class UpdateResturantCommandValidator : AbstractValidator<CreateResturantCommand>
+public class CreateResturantCommandValidator : AbstractValidator<CreateResturantCommand>
 {
     private readonly List<string> validCategories = ["Italian", "Indian", "American"];
 
-    public UpdateResturantCommandValidator()
+    public CreateResturantCommandValidator()
     {
         // first way to validate with custom rule
         RuleFor(p => p.Category)
