@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35728.132 d17.12
+VisualStudioVersion = 17.12.35728.132
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyResturants.Domain", "MyResturants.Domain\MyResturants.Domain.csproj", "{718B1BA9-1D9B-4398-A0CD-33ACF7BD7E3B}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyResturants.Presentaion", "MyResturants.Presentaion\MyResturants.Presentaion.csproj", "{08D14A69-9F8E-4FFE-85BF-8FEBBF64D26E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyResturants.Infrastructure", "MyResturants.Infrastructure\MyResturants.Infrastructure.csproj", "{280B1C20-50EF-4944-AE47-65465ACCDD3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyResturants.Application.Tests", "MyResturants.Application.Tests\MyResturants.Application.Tests.csproj", "{4F93EB73-B300-4CE5-8742-5F1F8779225E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{280B1C20-50EF-4944-AE47-65465ACCDD3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{280B1C20-50EF-4944-AE47-65465ACCDD3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{280B1C20-50EF-4944-AE47-65465ACCDD3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F93EB73-B300-4CE5-8742-5F1F8779225E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F93EB73-B300-4CE5-8742-5F1F8779225E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F93EB73-B300-4CE5-8742-5F1F8779225E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F93EB73-B300-4CE5-8742-5F1F8779225E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

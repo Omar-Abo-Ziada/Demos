@@ -8,9 +8,10 @@ using MyResturants.Domain.Repositories;
 namespace MyResturants.Application.Dishes.Commands.DeleteAllForResturant;
 
 public class DeleteAllDishesForResturantCommandHandler
-    (ILogger<DeleteAllDishesForResturantCommandHandler> logger, IMapper mapper ,
-    IResturantRepository resturantRepository , IDishRepository dishRepository)
-    : IRequestHandler<DeleteAllDishesForResturantCommand>
+    (ILogger<DeleteAllDishesForResturantCommandHandler> logger,
+    IMapper mapper ,
+    IResturantRepository resturantRepository ,
+    IDishRepository dishRepository): IRequestHandler<DeleteAllDishesForResturantCommand>
 {
     public async Task Handle(DeleteAllDishesForResturantCommand request, CancellationToken cancellationToken)
     {

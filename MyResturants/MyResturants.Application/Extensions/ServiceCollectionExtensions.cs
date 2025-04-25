@@ -26,7 +26,7 @@ public static class ServiceCollectionExtensions
             //.MinimumLevel.Override("Microsoft" , Serilog.Events.LogEventLevel.Warning)
             //.MinimumLevel.Override("Microsoft.EntityFrameworkCore" , Serilog.Events.LogEventLevel.Information)
             .CreateLogger();
-
+            
         services.AddSerilog();
 
         services.AddAutoMapper(assembly);

@@ -15,7 +15,7 @@ public class Resturant
     public Address Address { get; set; } = new(); // Owned entity, no separate table
     public List<Dish> Dishes { get; set; } = null!;
 
-    //public User Owner { get; set; } = default!;
-    //public string OwnerId { get; set; } = default!;
+    public User Owner { get; set; } = default!;
+    public string OwnerId { get; set; } = default!;
     //public string? LogoUrl { get; set; }
 }
