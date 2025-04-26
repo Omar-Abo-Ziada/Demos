@@ -8,8 +8,9 @@ using MyResturants.Domain.Repositories;
 namespace MyResturants.Application.Resturants.Commands.UpdateResturant;
 
 public class UpdateResturantCommandHandler
-    (ILogger<UpdateResturantCommand> logger, IMapper mapper, IResturantRepository resturantRepository)
-    : IRequestHandler<UpdateResturantCommand>
+    (ILogger<UpdateResturantCommandHandler> logger,
+    IMapper mapper,
+    IResturantRepository resturantRepository) : IRequestHandler<UpdateResturantCommand>
 {
     public async Task Handle(UpdateResturantCommand request, CancellationToken cancellationToken)
     {
