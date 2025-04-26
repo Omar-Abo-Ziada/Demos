@@ -14,15 +14,15 @@ public class CreateResturantCommandHandler(ILogger<CreateResturantCommandHandler
 {
     public async Task<int> Handle(CreateResturantCommand request, CancellationToken cancellationToken)
     {
-        var user = userContext.GetCurrentUser();
+            var user = userContext.GetCurrentUser();
 
-        logger.LogInformation("{user.Email} [{user.Id}] Is Creating New Resturant {@resturant}" 
-            , user!.Email , user.Id , request);
+            logger.LogInformation("{user.Email} [{user.Id}] Is Creating New Resturant {@resturant}" 
+                , user!.Email , user.Id , request);
 
-        var resturant = mapper.Map<Resturant>(request);
-        resturant.OwnerId = user.Id;
+            var resturant = mapper.Map<Resturant>(request);
+            resturant.OwnerId = user.Id;
 
-        int id = await resturantRepository.CreateAsync(resturant);
-        return id;
+            int id = await resturantRepository.CreateAsync(resturant);
+            return id;
     }
 }   
